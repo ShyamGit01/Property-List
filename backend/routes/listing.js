@@ -53,12 +53,46 @@ router.get("/:listingId", async (req, res) => {
 })
 
 // Update Listing
-router.put("/:listingId", (req, res) => {
-    res.send("Update listing");
+router.put("/:listingId", async (req, res) => {
+    try{
+        const listing = {
+            title : req.body.title,
+            price : req.body.price,
+            locality : req.body.locality,
+            details : req.body.details
+        };
+
+        const updatedListing = await Listing.findByIdAndUpdate({_id : req.params.listingId}, listing);
+        res.status(200).json({
+            status : 0,
+            message : "Data Updated Successfully",
+            data : {
+                old_data : updatedListing,
+                new_data : listing
+            }
+        })
+    } catch(error){
+        res.status(400).json({
+            status : 1,
+            message : error
+        })
+    }
 })
 
 // Delete Listing
-router.delete("/:listingId", (req, res) => {
-    res.send("Delete listing");
+router.delete("/:listingId", async (req, res) => {
+    try{
+        const removeListing = await Listing.findByIdAndDelete(req.params.listingId);
+        res.status(200).json({
+            status : 0,
+            message : "Data Deleted Successfully",
+            data : removeListing
+        })
+    } catch(error){
+        res.status(400).json({
+            status : 1,
+            message : error
+        })
+    }
 })
 module.exports = router;
