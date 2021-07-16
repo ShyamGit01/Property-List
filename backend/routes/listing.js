@@ -3,7 +3,6 @@ const router = require("express").Router();
 const Listing = require("../model/ListingModel");
 
 router.get("/", async (req, res) => {
-    // res.send("Welcome to listing");
     try{
         const listing = await Listing.find();
         res.status(200).json({
@@ -95,4 +94,5 @@ router.delete("/:listingId", async (req, res) => {
         })
     }
 })
+
 module.exports = router;

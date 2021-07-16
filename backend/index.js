@@ -15,19 +15,22 @@ mongoose.connect(
 
 // Import router
 const listingRouter = require("./routes/listing");
+const userRouter = require("./routes/user")
 
 // Middleware
 app.use(express.json());
 
 // route Middleware
 app.use("/api/listings", listingRouter);
+app.use("/api/users", userRouter);
 
 const port = 3000
 app.listen(port, () => {
     console.log('               Server listening')
     console.log('==================================================')
-    console.log(`1. baseurl    http://localhost:${port}`);
-    console.log(`2. api        http://localhost:${port}/api/listings/`);
+    console.log(`1. baseurl         http://localhost:${port}`);
+    console.log(`2. Listing api     http://localhost:${port}/api/listings/`);
+    console.log(`3. User api        http://localhost:${port}/api/users/`);
     console.log('==================================================')
     
 })
