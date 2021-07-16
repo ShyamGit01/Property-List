@@ -5,11 +5,12 @@ const Listing = require("../model/ListingModel");
 router.get("/", async (req, res) => {
     try{
         const listing = await Listing.find();
-        res.status(200).json({
-            status : 0,
-            message : "Data Fetch Successfully",
-            data : listing
-        })
+        res.send(listing);
+        // res.status(200).json({
+        //     status : 0,
+        //     message : "Data Fetch Successfully",
+        //     data : listing
+        // })
     } catch(error){
         res.status(400).json({
             status : 1,
