@@ -1,0 +1,26 @@
+nav {
+  background: #4285f4;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+h1 {
+  color: #ffffff;
+}
+li {
+  background: #4285f4;
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
+}
+a {
+  background: #4285f4;
+  color: #fff;
+  padding: 0 10px;
+  text-decoration: none;
+  line-height: 100%;
+  display: block;
+}
