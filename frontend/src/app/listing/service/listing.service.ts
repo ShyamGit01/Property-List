@@ -13,4 +13,8 @@ export class ListingService {
   getListings(): Observable <Listing[]> {
     return this.http.get<Listing[]>(this.ROOT_URL);
   }
+
+  getListing(id: string) {
+    return this.http.get<Listing>(`${this.ROOT_URL}/${id}`);
+  }
 }

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ListingRoutingModule } from './listing-routing.module';
 import { AllListingComponent } from './all-listing/all-listing.component';
+import { ListingDetailComponent } from './listing-detail/listing-detail.component';
 
 
 @NgModule({
   declarations: [
-    AllListingComponent
+    AllListingComponent,
+    ListingDetailComponent
   ],
   imports: [
     CommonModule,

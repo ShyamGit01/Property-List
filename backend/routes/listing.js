@@ -39,11 +39,12 @@ router.post("/", verify, async (req, res) => {
 router.get("/:listingId", async (req, res) => {
     try{
         const listing = await Listing.findById(req.params.listingId);
-        res.status(200).json({
-            status : 0,
-            message : "Data Fetch Successfully",
-            data : listing
-        })
+        // res.status(200).json({
+        //     status : 0,
+        //     message : "Data Fetch Successfully",
+        //     data : listing
+        // })
+        res.status(200).send(listing);
     } catch(error){
         res.status(400).json({
             status : 1,
