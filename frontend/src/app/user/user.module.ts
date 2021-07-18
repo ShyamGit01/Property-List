@@ -5,12 +5,14 @@ import { UserRoutingModule } from './user-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
