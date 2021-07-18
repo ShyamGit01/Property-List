@@ -1,9 +1,14 @@
 <nav>
-    <h1>Property Listing App</h1>
-    <ul class="main-menu">
-        <li><a routerLink="/listings">All Listing</a></li>
-        <li><a routerLink="/listings/add-listing">Add Listing</a></li>
-        <li><a routerLink="/users/login">Login</a></li>
-        <li><a routerLink="/users/register">Register</a></li>
-    </ul>
+  <h1>Property Listing App</h1>
+  <ul class="main-menu">
+    <li><a routerLink="/listings">All Listing</a></li>
+    <li *ngIf="userService.loggedIn()">
+      <a routerLink="/listings/add-listing">Add Listing</a>
+    </li>
+    <li *ngIf="!userService.loggedIn()"><a routerLink="/users/login">Login</a></li>
+    <li *ngIf="!userService.loggedIn()"><a routerLink="/users/register">Register</a></li>
+    <li *ngIf="userService.loggedIn()">
+        <a style="cursor: pointer;" (click)="userService.logout()">Logout</a>
+      </li>
+  </ul>
 </nav>

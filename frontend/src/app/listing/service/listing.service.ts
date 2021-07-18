@@ -26,4 +26,12 @@ export class ListingService {
   addListing(listing: any){
     return this.http.post<any>(`${this.ROOT_URL}/add-listing`, listing, this.httpOptions);
   }
+
+  editListing(listing: any, id: string){
+    return this.http.put<any>(`${this.ROOT_URL}/${id}`, listing, this.httpOptions);
+  }
+
+  deleteListing(id: string){
+    return this.http.delete<any>(`${this.ROOT_URL}/${id}`, this.httpOptions);
+  }
 }
