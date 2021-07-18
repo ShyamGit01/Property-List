@@ -1,0 +1,11 @@
+<div class="form-wrrap">
+    <h3>Add listing</h3>
+    <form [formGroup]="listingForm" (ngSubmit)="newListing()">
+        <input type="text" placeholder="Enter title" formControlName="title">
+        <input type="text" placeholder="Enter price" formControlName="price">
+        <input type="text" placeholder="Enter locality" formControlName="locality">
+        <input type="text" placeholder="Enter details" formControlName="details">
+        
+        <input type="submit" value="Add Details" [disabled]="!listingForm.valid" />
+    </form>
+</div>

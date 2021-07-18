@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
 })
 
 // Add new listing
-router.post("/", verify, async (req, res) => {
+router.post("/add-listing", verify, async (req, res) => {
     const listing = new Listing({
         title : req.body.title,
         price : req.body.price,
@@ -29,7 +29,7 @@ router.post("/", verify, async (req, res) => {
     });
     try{
         const savedListing = await listing.save();
-        res.send(savedListing);
+        res.status(200).send(savedListing);
     } catch(error){
         res.status(400).send(error);
     }
@@ -84,11 +84,12 @@ router.put("/:listingId", verify, async (req, res) => {
 router.delete("/:listingId", verify, async (req, res) => {
     try{
         const removeListing = await Listing.findByIdAndDelete(req.params.listingId);
-        res.status(200).json({
-            status : 0,
-            message : "Data Deleted Successfully",
-            data : removeListing
-        })
+        // res.status(200).json({
+        //     status : 0,
+        //     message : "Data Deleted Successfully",
+        //     data : removeListing
+        // })
+        res.status(200).send(removeListing);
     } catch(error){
         res.status(400).json({
             status : 1,
