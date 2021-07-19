@@ -2,6 +2,8 @@ const router = require("express").Router();
 const verify = require("../routes/verifyToken");
 const Listing = require("../model/ListingModel");
 
+
+
 router.get("/", async (req, res) => {
     try{
         const listing = await Listing.find();
