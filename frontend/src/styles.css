@@ -11,7 +11,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-li.listings {
+/* li.listings {
   list-style: none;
   width: 30%;
   padding: 20px;
@@ -20,11 +20,11 @@ li.listings {
   margin: 10px;
   border-radius: 10px;
   text-align: center;
-}
+} */
 h5 {
   margin: 10px 0;
 }
-a {
+/* a {
   background: #34a853;
   color: #fff;
   display: block;
@@ -32,7 +32,7 @@ a {
   line-height: 35px;
   text-decoration: none;
   border-radius: 20px;
-}
+} */
 
 main {
   max-width: 1200px;

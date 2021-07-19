@@ -11,14 +11,15 @@ const routes: Routes = [
     component: AllListingComponent
   },
   {
-    path:':id',
-    component: ListingDetailComponent
-  },
-  {
     path:'add-listing',
     component: AddListingComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path:':id',
+    component: ListingDetailComponent
+  },
+  
 ];
 
 @NgModule({
